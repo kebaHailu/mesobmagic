@@ -1,0 +1,70 @@
+<div class="max-w-lg mx-auto mt-8 p-6 shadow-lg mb-8 rounded-md">
+    <h1 class="text-2xl font-bold mb-6">Profile Settings</h1>
+
+    <div class="flex items-center mb-6">
+        <img src="public/default_profile.png" :src="profilePic" class="w-20 h-20 rounded-full mr-4" alt="Profile Pic">
+        <div>
+            <nuxt-link to="/change-profile-pic" class="text-blue-500">Change Profile Picture</nuxt-link>
+            <p class="text-gray-500">Upload a new profile picture.</p>
+        </div>
+    </div>
+
+    <div class="p-4">
+        <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+        <div class="mt-1 relative rounded-md shadow-sm">
+            <input type="text" name="username" v-model="username"
+                class="focus:ring-green-500 focus:border-green-500 block w-full pl-3 pr-10 py-2 border-gray-300 rounded-md"
+                placeholder="Enter your username">
+        </div>
+    </div>
+
+    <div class="p-4">
+        <label for="username" class="block text-sm font-medium text-gray-700">Email</label>
+        <div class="mt-1 relative rounded-md shadow-sm">
+            <input type="email" name="email" v-model="email"
+                class="focus:ring-green-500 focus:border-green-500 block w-full pl-3 pr-10 py-2 border-gray-300 rounded-md"
+                placeholder="Enter your Email">
+        </div>
+    </div>
+    <div class="p-4">
+        <label for="username" class="block text-sm font-medium text-gray-700">First Name</label>
+        <div class="mt-1 relative rounded-md shadow-sm">
+            <input type="text" name="firstname" v-model="firstName"
+                class="focus:ring-green-500 focus:border-green-500 block w-full pl-3 pr-10 py-2 border-gray-300 rounded-md"
+                placeholder="Enter your First Name">
+        </div>
+    </div>
+
+    <div class="p-4">
+        <label for="username" class="block text-sm font-medium text-gray-700">Last Name</label>
+        <div class="mt-1 relative rounded-md shadow-sm">
+            <input type="text" name="lastname" v-model="lastName"
+                class="focus:ring-green-500 focus:border-green-500 block w-full pl-3 pr-10 py-2 border-gray-300 rounded-md"
+                placeholder="Enter your Last Name">
+        </div>
+    </div>
+
+
+    <div class="mb-8">
+        <nuxt-link to="/change-password" class="text-blue-500">Change Password</nuxt-link>
+    </div>
+
+    <div class="flex justify-end">
+        <button class="bg-blue-500 text-white px-4 py-2 rounded-md mr-4">Save</button>
+        <button class="bg-gray-200 text-gray-800 px-4 py-2 rounded-md">Cancel</button>
+    </div>
+</div>
+
+<script>
+    export default {
+        data() {
+            return {
+                profilePic: 'public/logo.png',
+                displayName: '',
+                email: '',
+                firstName: '',
+                lastName: '',
+            };
+        },
+    };
+</script>
